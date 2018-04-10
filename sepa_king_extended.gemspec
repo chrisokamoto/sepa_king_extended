@@ -4,14 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sepa_king/version'
 
 Gem::Specification.new do |s|
-  s.name          = 'sepa_king'
+  s.name          = 'sepa_king_extended'
   s.version       = SEPA::VERSION
-  s.authors       = ['Georg Leciejewski', 'Georg Ledermann']
-  s.email         = ['gl@salesking.eu', 'mail@georg-ledermann.de']
-  s.description   = 'Implemention of pain.001.002.03 and pain.008.002.02 (ISO 20022)'
+  s.authors       = ['Georg Leciejewski', 'Georg Ledermann', 'Chris Okamoto']
+  s.email         = ['gl@salesking.eu', 'mail@georg-ledermann.de', 'christiane.okamoto@gmail.com']
+  s.description   = 'Accepts payment type 3 - for payments in CHF and not SEPA in pain.0001.0001.03 (ISO 20022)'
   s.summary       = 'Ruby gem for creating SEPA XML files'
-  s.homepage      = 'http://github.com/salesking/sepa_king'
-  s.license       = 'MIT'
+  s.homepage      = 'https://github.com/chrisokamoto/sepa_king_extended'
 
   s.files         = `git ls-files`.split($/)
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
