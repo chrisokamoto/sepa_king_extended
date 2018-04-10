@@ -19,6 +19,8 @@ module SEPA
       when PAIN_001_001_03
         if self.currency == 'EUR'
           self.service_level == 'SEPA'
+        else
+          self.service_level == ''
         end
       when PAIN_001_002_03
         self.bic.present? && self.service_level == 'SEPA' && self.currency == 'EUR'
