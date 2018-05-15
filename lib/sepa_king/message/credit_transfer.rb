@@ -26,13 +26,7 @@ module SEPA
           builder.BtchBookg(group[:batch_booking])
           builder.NbOfTxs(transactions.length)
           builder.CtrlSum('%.2f' % amount_total(transactions))
-          if group[:service_level].blank?
-            builder.PmtTpInf do
-              builder.LclInstrm do
-                builder.Prtry('CH03')
-              end
-            end
-          else
+          unless group[:service_level].blank?
             builder.PmtTpInf do
               builder.SvcLvl do
                 builder.Cd(group[:service_level])
