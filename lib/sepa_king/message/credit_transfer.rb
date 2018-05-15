@@ -84,6 +84,15 @@ module SEPA
         end
         builder.Cdtr do
           builder.Nm(transaction.name)
+          if transaction.street_name
+            builder.StrtNm(transaction.street_name)
+          end
+          if transaction.post_code
+            builder.PstCd(transaction.post_code)
+          end
+          if transaction.town_name
+            builder.TwnNm(transaction.town_name)
+          end
         end
         builder.CdtrAcct do
           builder.Id do

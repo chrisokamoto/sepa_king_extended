@@ -6,8 +6,8 @@ module SEPA
 
     DEFAULT_REQUESTED_DATE = Date.new(1999, 1, 1).freeze
 
-    attr_accessor :name, :iban, :bic, :amount, :instruction, :reference, :remittance_information, :requested_date, :batch_booking, :currency
-    convert :name, :instruction, :reference, :remittance_information, to: :text
+    attr_accessor :name, :iban, :bic, :amount, :instruction, :reference, :remittance_information, :requested_date, :batch_booking, :currency, :street_name, :post_code, :town_name
+    convert :name, :instruction, :reference, :remittance_information, :street_name, :post_code, :town_name, to: :text
     convert :amount, to: :decimal
 
     validates_length_of :name, within: 1..70
@@ -15,6 +15,9 @@ module SEPA
     validates_length_of :instruction, within: 1..35, allow_nil: true
     validates_length_of :reference, within: 1..35, allow_nil: true
     validates_length_of :remittance_information, within: 1..140, allow_nil: true
+    validates_length_of :street_name, within: 1..70, allow_nil: true
+    validates_length_of :post_code, within: 1..16, allow_nil: true
+    validates_length_of :town_name, within: 1..35, allow_nil: true
     validates_numericality_of :amount, greater_than: 0
     validates_presence_of :requested_date
     validates_inclusion_of :batch_booking, :in => [true, false]
