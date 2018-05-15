@@ -100,7 +100,7 @@ module SEPA
     def xml_schema(schema_name)
       { :xmlns                => "urn:iso:std:iso:20022:tech:xsd:#{schema_name}",
         :'xmlns:xsi'          => 'http://www.w3.org/2001/XMLSchema-instance',
-        :'xsi:schemaLocation' => "urn:iso:std:iso:20022:tech:xsd:#{schema_name} #{schema_name}.xsd" }
+        :'xsi:schemaLocation' => "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd pain.001.001.03.ch.02.xsd" }
     end
 
     def build_group_header(builder)
