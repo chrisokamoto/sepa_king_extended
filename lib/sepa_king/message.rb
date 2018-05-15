@@ -98,7 +98,7 @@ module SEPA
   private
     # @return {Hash<Symbol=>String>} xml schema information used in output xml
     def xml_schema(schema_name)
-      { :xmlns                => "urn:iso:std:iso:20022:tech:xsd:#{schema_name}",
+      { :xmlns                => "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd",
         :'xmlns:xsi'          => 'http://www.w3.org/2001/XMLSchema-instance',
         :'xsi:schemaLocation' => "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd pain.001.001.03.ch.02.xsd" }
     end
